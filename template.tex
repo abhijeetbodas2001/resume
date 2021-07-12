@@ -1,0 +1,189 @@
+%   Basic resume template
+%
+%   Original author: Ganesh Mohan (http://about.me/ganesh.mohan)
+%   Original source: https://github.com/ganesh2shiv/resume-latex-template
+%
+%   Heavily edited by: Abhijeet Prasad Bodas <abhijeetbodas2001@gmail.com>
+%
+%
+%   Usage guidelines:
+%   * Use font size 11 for one-page resumes and 12 for two-page resumes
+%   * Adjust the margins in the environment/command definitions, don't add
+%     random stuff in between the content.
+%   * Adjust sentences to be concise/verbose so that they roughly fit the line
+%     width of the document.
+%   * Figure out the top-spacing for PT Cell stamp with hit-and-trial
+%
+
+\documentclass[11pt]{article}
+% Font size here^^^
+
+% Set the margin for the page
+\usepackage[margin=0.8in]{geometry}
+
+% For skipping the indentation for newlines/new paragraphs (which LaTeX does by default)
+\usepackage[parfill]{parskip}
+
+
+\renewcommand{\section}[1]{
+    \textsc{#1}
+    \vspace*{-10pt} \\ \hspace*{-5pt} 
+    \hrulefill \\
+    \vspace*{-15pt}
+}
+
+\newcommand{\smallbullet}{
+    \small$\bullet$
+}
+
+% Use this for lists with small padding and many items, if it
+% will be placed directly below sections
+\newenvironment{bullet-list-major}{
+    \begin{list}{
+        \smallbullet
+    }{
+        \setlength\leftmargin{15pt}\topsep 0pt \itemsep -4pt
+    }
+} {
+    \end{list}
+}
+
+% Use this for lists with large padding and fewer items, if it
+% will be placed directly below sections
+\newenvironment{spaced-bullet-list-major}{
+    \begin{list}{
+        \smallbullet
+    }{
+        \setlength\leftmargin{15pt}\topsep 0pt
+    }
+} {
+    \end{list}
+}
+
+% Use the next two functions for blocks within a section which contains subpoints.
+% Renders as:
+%   Company name                                                    2019 - 2020
+%   Some description (in italic) about the company or the project here
+%   * Point 1
+%   * Point 2
+%   * Point 3
+%
+% The first two lines come from "bigblock" and the points come from "bullet-list-minor"
+\newcommand{\bigblock}[3]{
+    {
+        \hspace*{5pt} \textbf{#1} \hfill #2 \newline
+        \hspace*{5pt} \textit{#3}
+    }
+}
+
+\newenvironment{bullet-list-minor}{
+    \begin{list}{
+        \smallbullet
+    }{
+        \setlength\leftmargin{30pt}\topsep 0pt \itemsep -3pt
+    }
+} {
+    \end{list}
+}
+
+\begin{document}
+
+    % Switch off page numbering
+    \pagenumbering{gobble}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Academic Achievements}
+    \begin{bullet-list-major}
+        \item Secured rank \textbf{xxx} in engineering entrance exam, among \textbf{yyy} candidates. \hfill 2019
+        \item Pursuing a \textbf{Minor degree} in \textbf{xxx} under YYY Department, LMN University \hfill Present
+        \item Recipient of the esteemed \textbf{PQR} fellowship awarded to \textbf{1\%} students out
+        of \textbf{ABC} candidates. \hfill 2019
+    \end{bullet-list-major}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Projects}
+
+    \bigblock{
+        Project name
+    }{
+        June 2020
+    }{
+        Short, one-line project description explaining what the project was about, among other things
+    }
+	\begin{bullet-list-minor}
+        \item Project point 1
+        \item Project point 2
+        \item Project point 3
+    \end{bullet-list-minor}
+    
+
+    \bigblock{
+        Another project's name
+    }{
+        September 2020
+    }{
+        Personal Project
+    }
+	\begin{bullet-list-minor}
+        \item Project point 1
+        \item Project point 2
+        \item Project point 3
+    \end{bullet-list-minor}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Positions of Responsibility}
+
+    \bigblock{
+        Position title
+    }{
+        April 2020 - Present
+    }{
+        Short description
+    }
+    \begin{bullet-list-minor}
+        \item Point 1
+        \item Point 2
+        \item Point 3
+    \end{bullet-list-minor}
+    
+
+    \bigblock{
+        Another position's title
+    }{
+        August 2020 - Present
+    }{
+        Organisation's name
+    }
+	\begin{bullet-list-minor}
+        \item Point 1
+        \item Point 2
+        \item Point 3
+    \end{bullet-list-minor}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Technical Skills}
+
+    \begin{spaced-bullet-list-major}
+        \item \textbf{Programming Languages}: C++, Java
+        \item \textbf{Tools \& Frameworks}: Git, Flask
+        \item \textbf{Software Experience}: Microsoft Office, Power BI
+        \item \textbf{Operating Systems}: Windows, Ubuntu
+    \end{spaced-bullet-list-major} 
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Extracurricular Activities}
+
+    \begin{spaced-bullet-list-major}
+        \item Point 1
+        \item Point 2
+        \item Point 3
+    \end{spaced-bullet-list-major}
+
+    % -----------------------------------------------------------------------------------------
+
+\end{document}

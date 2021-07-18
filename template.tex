@@ -7,19 +7,17 @@
 %
 %
 %   Usage guidelines:
-%   * Use font size 11 for one-page resumes and 12 for two-page resumes
 %   * Adjust the margins in the environment/command definitions, don't add
 %     random stuff in between the content.
 %   * Adjust sentences to be concise/verbose so that they roughly fit the line
 %     width of the document.
-%   * Figure out the top-spacing for PT Cell stamp with hit-and-trial
 %
 
-\documentclass[11pt]{article}
-% Font size here^^^
+% \documentclass[11pt]{article} % one page
+\documentclass[12pt]{article}   % two page
 
 % Set the margin for the page
-\usepackage[margin=0.8in]{geometry}
+\usepackage[margin=14.11mm]{geometry}
 
 % For skipping the indentation for newlines/new paragraphs (which LaTeX does by default)
 \usepackage[parfill]{parskip}
@@ -87,6 +85,9 @@
 }
 
 \begin{document}
+
+    % \vspace*{38.98mm}   % 1-page (53.09 mm total)
+    \vspace*{48.63mm}   % 2-page (62.74 mm total)
 
     % Switch off page numbering
     \pagenumbering{gobble}
@@ -185,5 +186,8 @@
     \end{spaced-bullet-list-major}
 
     % -----------------------------------------------------------------------------------------
+
+    % 14.11 is from geometry package and we want 6.4 mm on bottom
+    \vspace*{-7.71mm}
 
 \end{document}

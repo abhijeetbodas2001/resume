@@ -96,6 +96,12 @@
     \\
 }
 
+% Credit: https://nw360.blogspot.com/2007/09/roman-numerals-in-latex.html
+% Use this to render capital roman numerals
+\makeatletter
+\newcommand{\schoolclass}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
 \begin{document}
 
     % \vspace*{38.98mm}   % 1-page (53.09 mm total)
@@ -112,6 +118,7 @@
         \item Pursuing a \textbf{Minor degree} in \textbf{xxx} under YYY Department, LMN University \hfill Present
         \item Recipient of the esteemed \textbf{PQR} fellowship awarded to \textbf{1\%} students out
         of \textbf{ABC} candidates. \hfill 2019
+        \item Did something in class \schoolclass{9} too!
     \end{bullet-list-major}
 
     % -----------------------------------------------------------------------------------------

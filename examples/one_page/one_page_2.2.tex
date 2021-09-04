@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+\usepackage[parfill]{parskip}
+\usepackage{amsmath} 
+\usepackage{layouts}
+\usepackage[tmargin=53.09mm, lmargin=14.11mm, rmargin=14.11mm, bmargin=6.4mm]{geometry}
+
+\renewcommand{\section}[1]{
+    \textsc{\Large{#1}}
+    \vspace*{-10pt} \\ \hspace*{-5pt} 
+    \hrulefill \\
+    \vspace*{-15pt}
+}
+
+\newcommand{\smallbullet}{
+    \tiny$\bullet$
+}
+
+\newenvironment{bullet-list-major}{
+    \vspace*{-5pt}
+    \begin{list}{
+        \smallbullet
+    }{
+        \setlength\leftmargin{15pt}\topsep 0pt \itemsep -6pt
+    }
+} {
+    \end{list}
+}
+
+
+\newcommand{\bigblock}[3]{
+    {
+        \vspace*{-5pt}
+        \hspace*{-8pt} \textbf{#1} \hfill #2 \newline
+        \textit{#3}
+        \vspace*{-5pt}
+    }
+}
+
+\newcommand{\bigblocknobylines}[2]{
+    {
+        \vspace*{-5pt}
+        \hspace*{-8pt} \textbf{#1} \hfill #2 \newline
+        \vspace*{-20pt}
+    }
+}
+
+\newenvironment{bullet-list-minor}{
+    \begin{list}{
+        \smallbullet
+    }{
+        \setlength\leftmargin{15pt}\topsep 0pt \itemsep -6pt
+    }
+} {
+    \end{list}
+}
+
+\newcommand{\coursesitem}[2]{
+    \begin{tabular}{p{4cm}p{14cm}}
+        \textbf{#1} &
+        #2 \\
+    \end{tabular}
+    \\
+    \vspace*{-10pt}
+}
+
+\makeatletter
+\newcommand{\schoolclass}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\begin{document}
+
+    \pagenumbering{gobble}
+
+    % -----------------------------------------------------------------------------------------
+
+    Pursuing a \textbf{Minor} degree in \textbf{Computer Science and Engineering} at IIT Bombay
+    \vspace{-5pt}
+
+    \section{Academic Achievements}
+    \begin{bullet-list-major}
+        \item Secured All India Rank \textbf{628} in JEE Advanced and \textbf{99.84\%} percentile in the JEE Mains examination \hfill [2019]
+        \item Recipient of the \textbf{KVPY} scholarship after securing All India Rank of \textbf{717} among \textbf{1 lakh+} candidates \hfill [2019]
+        \item Among the \textbf{top 2 students in Mumbai} region in \textbf{HSC} class 12th board exams in \textbf{science} stream   \hfill [2019]
+    \end{bullet-list-major}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Work Experience}
+
+    \bigblock{
+        Student Developer \(|\) Google Summer of Code
+    }{
+        [May - August 2021]
+    }{
+        The Zulip project: powerful, open-source group chat application with first-class threading
+    }
+    \begin{bullet-list-minor}
+        \item Worked on a \textbf{Django/Tornado} stack, writing clean, maintainable code with \textbf{unit and integration tests}
+        \item Utilized \textbf{PostgreSQL} features like \textbf{row-level locks} and database \textbf{transactions} for \textbf{concurrency control}
+        \item Developed the \textbf{mute users} feature, which was a \textbf{key highlight} in the Zulip 4.0 release announcement
+        \item Rewrote the email notifications event \textbf{queue processor} to be \textbf{lossless} by using persistent database storage
+        \item Refactored various areas to improve \textbf{codebase quality} while ensuring \textbf{backwards compatibility} of API
+    \end{bullet-list-minor}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Key Projects}
+
+    \bigblock{
+        Parallelized QR Matrix Factorization
+    }{
+        [April - May 2021]
+    }{
+        Course project: High performance scientific computing \(|\) Guide: Prof. Shivasubramanian Gopalakrishnan
+    }
+	\begin{bullet-list-minor}
+        \item Implemented the \textbf{Modified Gram Schmidt} and \textbf{Householder} matrix factorization algorithms in \textbf{C++}
+        \item Parallelized the algorithms using \textbf{OpenMP} library as well as the \textbf{GPU} based \textbf{Nvidia CUDA} platform
+        \item Performed a \textbf{time study} to analyze the effects of the matrix \textbf{size} and the number of parallel \textbf{threads} on
+        the program's execution time. Achieved an up to \textbf{60\%} speedup as compared to the serial implementation
+    \end{bullet-list-minor}
+    
+
+    \bigblock{
+        Comparative Study of Image Compression Techniques
+    }{
+        [March - May 2021]
+    }{
+        Course project: Introduction to Machine Learning \(|\) Guide: Prof. Biplab Banerjee
+    }
+	\begin{bullet-list-minor}
+        \item Utilized \textbf{Scikit-learn} library for \textbf{Principal Component Analysis}
+        using \textbf{Singular Value Decomposition}
+        \item Obtained a \textbf{PSNR} value of \textbf{24} and a \textbf{62.5\%} theoretical reduction in image size using \textbf{150} components 
+        \item \textbf{Compared} the results with a 60 points \textbf{K-means} implementation and a \textbf{GAN} based \textbf{deep learning} model
+    \end{bullet-list-minor}
+
+    \bigblock{
+        Git Contribution CLI
+    }{
+        [September 2020]
+    }{
+        Hobby project \(|\) Create GitHub profile-like heatmap graphs for local repositories
+    }
+	\begin{bullet-list-minor}
+        \item Developed a \textbf{command-line interface} to generate contribution graphs using \textbf{Go programming language}
+        \item Scanned for \textbf{.git} files to detect repositories in all \textbf{sub-folders} of a given directory path using \textbf{recursion}
+        \item Utilized the \textbf{go-git package} to find commits authored by a given \textbf{email} to generate the \textbf{heat-map} graph
+    \end{bullet-list-minor}
+
+    \section{Positions of Responsibility}
+
+    \bigblocknobylines{
+        Web Convener \(|\) Undergraduate Academic Council \(|\) IIT Bombay
+    }{
+        [April 2020 - May 2021]
+    }
+    \begin{bullet-list-minor}
+        \item Responsible for \textbf{upgrading and maintaining} existing web pages of the council and \textbf{building} new ones
+        \item Developed the course ranking portal, \textbf{Credit} for writing course reviews, and implemented features such as
+        \textbf{up-vote} review, \textbf{admin} moderation of reviews, and \textbf{SSO (OAuth2)} login using the \textbf{Django} web framework
+        \item Revamped portals for \textbf{Learnerspace} and \textbf{iSURP} programs, which saw a \textbf{400\%} YOY increase in registrations
+    \end{bullet-list-minor}
+    
+    % -----------------------------------------------------------------------------------------
+
+    \section{Extracurricular Activities}
+
+    \begin{bullet-list-major}
+        \item Secured \textbf{2nd position} in Shell Energy Day brainstorming competition among \textbf{10+} participant teams  \hfill [2019]
+        \item Achieved a \textbf{perfect score} in the Maths and Physics \textbf{General Championship} SciComp at IITB    \hfill [2020]
+        \item Completed \textbf{year-long} training in \textbf{tabla} instrument playing as part of \textbf{NSO} in the freshman year \hfill [2019 - 20]
+    \end{bullet-list-major}
+
+    % -----------------------------------------------------------------------------------------
+
+    \vspace*{-200pt}
+
+\end{document}

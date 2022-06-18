@@ -1,14 +1,11 @@
-## Basic LaTeX resume template
+## Resumes
 
-Original author: [Ganesh Mohan](https://github.com/ganesh2shiv)
+This repository contains my one and two page resumes without PT cell headers.
+Also includes the LaTeX template that I used, which was derived from [Ganesh Mohan](https://github.com/ganesh2shiv)'s [LaTeX resume template](https://github.com/ganesh2shiv/resume-latex-template).
 
-Original source: https://github.com/ganesh2shiv/resume-latex-template
-
-Heavily edited by: Abhijeet Prasad Bodas <abhijeetbodas2001@gmail.com>
-
-### License
+### License (for TeX code)
 ```
-    Copyright 2021 Abhijeet Bodas
+    Copyright 2021-Present Abhijeet Bodas
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

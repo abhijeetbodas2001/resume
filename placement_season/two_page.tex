@@ -1,0 +1,240 @@
+\documentclass[11pt]{article}
+\usepackage[margin=14.11mm]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage{amsmath} 
+
+
+\renewcommand{\section}[1]{
+    \vspace*{8pt}
+    \textsc{\LARGE{#1}}
+    \vspace*{-10pt} \\ \hspace*{-5pt} 
+    \hrulefill \\
+    \vspace*{-15pt}
+    \vspace*{-8pt}
+}
+
+\newcommand{\smallbullet}{
+    \small$\bullet$
+}
+
+\newenvironment{bullet-list-major}{
+    \vspace*{8pt}
+    \begin{list}{
+        \smallbullet
+    }{
+        \setlength\leftmargin{15pt}\topsep -5pt \itemsep -6pt
+    }
+} {
+    \end{list}
+}
+
+\newcommand{\bigblock}[3]{
+    {
+        \vspace*{5pt}
+        \hspace*{-8pt} \large{\textbf{#1}} \hfill #2 \newline
+        \textit{\textsf{#3}}
+    }
+}
+
+\newenvironment{bullet-list-minor}{
+    \begin{list}{
+        \smallbullet
+    }{
+        \setlength\leftmargin{30pt}\topsep -5pt \itemsep -6pt
+    }
+} {
+    \end{list}
+}
+
+\newcommand{\coursesitem}[2]{
+    \begin{tabular}{p{4cm}p{14cm}}
+        \textbf{#1} &
+        #2 \\
+    \end{tabular}
+    \\
+    \vspace*{-10pt}
+}
+
+\makeatletter
+\newcommand{\schoolclass}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\begin{document}
+    \vspace*{48.63mm}
+
+    \pagenumbering{gobble}
+
+    % -----------------------------------------------------------------------------------------
+
+    \vspace{-20pt}
+    Pursuing a \textbf{minor} degree in the department of \textbf{Computer Science and Engineering} at IIT Bombay
+    \vspace{-10pt}
+
+    \section{Academic Achievements}
+    \begin{bullet-list-major}
+        \item Secured an All India Rank of \textbf{628} in the JEE Advanced exam among \textbf{2.45 lakh} student candidates \hfill [2019]
+        \item Among top \textbf{1\%} of students to receive the \textbf{KVPY} Fellowship out of \textbf{1 lakh} participants, with AIR \textbf{717}  \hfill [2018]
+        \item Secured \textbf{99.84\%} percentile in the JEE Mains examination among \textbf{9 lakh+} candidates all over India \hfill [2019]
+        \item Secured a \textbf{scholarship} for higher education in science on being among \textbf{top 2 students in Mumbai} region in the Maharashtra Higher Secondary Education (\textbf{HSC}) class 12th board exams in the \textbf{science} stream   \hfill [2019]
+        \item Among \textbf{top 1\%} in India in the National Standard Examination in Astronomy and selected for \textbf{INAO} \hfill [2018]
+    \end{bullet-list-major}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Work Experience}
+
+    \bigblock{
+        Summer Analyst \(|\) Goldman Sachs, Bengaluru
+    }{
+        [May - July 2022]
+    }{
+        Production Runtime Experience, Core Engineering Division
+    }
+    \begin{bullet-list-minor}
+        \item Enhanced the \textbf{runtime predictions} for processes and jobs part of a complex \textbf{dependency graph}, in order to better estimate their \textbf{time of completion} (ETA) using historical as well as \textbf{real time} data
+        \item Achieved upto \textbf{12\%} reduction in mean absolute \textbf{errors} after
+        training multiple ML models like \textbf{XGBoost}, \textbf{Support Vector Machine} and \textbf{Neural Network}, and performing \textbf{hyper-parameter} tuning on them
+        \item Developed \textbf{Gremlin} queries to traverse the \textbf{Janus graph} database and fetch data about common resources accessed by processes, in order to forecast delays for a process based on delays in it's \textbf{upstream} processes
+        \item Implemented a \textbf{Graph Neural Network} based on \textbf{message passing} using the \textbf{PyTorch Geometric} library to have the model learn the graph structure, and trained the model by \textbf{masking} the child nodes
+    \end{bullet-list-minor}
+
+    % -----------------------------------------------------------------------------------------
+
+    \bigblock{
+        Student Developer \(|\) Google Summer of Code
+    }{
+        [May - August 2021]
+    }{
+        The Zulip project: powerful, open-source group chat application with first-class threading
+    }
+    \begin{bullet-list-minor}
+        \item Fixed many bugs and developed new features in the \textbf{notifications subsystem} of the \textbf{Django} codebase
+        \item Developed the \textbf{mute users} feature, which was one of the \textbf{release highlight} in the Zulip 4.0 announcement
+        \item Fixed several bugs due to \textbf{race conditions} by using \textbf{locks} and \textbf{transactions} in the \textbf{PostgreSQL} database
+        \item Developed a new \textbf{lossless} email notifications event \textbf{queue processor} by using persistent database storage
+        \item Consolidated all notifiability logic in a new Python \textbf{dataclass}, while ensuring \textbf{backwards compatibility} of the \textbf{API} as well as the Tornado \textbf{event queue} system in order to avoid issues during \textbf{server upgrade}
+        \item Contributed \textbf{200+} commits from \textbf{50+} pull requests along with unit and integration \textbf{tests} to the codebase
+    \end{bullet-list-minor}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Key Projects}
+
+    \bigblock{
+        Electric Vehicle Charging Network Optimisation
+    }{
+        [Jan - April 2022]
+    }{
+        Course project: Industrial engineering and operations research \(|\) Prof. Avinash Bhardwaj
+    }
+	\begin{bullet-list-minor}
+        \item Formulated a constrained \textbf{optimization} problem to minimize the overall customer \textbf{travelling time} by choosing locations for constructing charging stations for electric vehicles among a set of available locations
+        \item Implemented the formulation in \textbf{AMPL}, using the \textbf{CPLEX} solver to find the optimal station locations
+        \item Used \textbf{Selenium} for web-scraping the Google Maps webapp to obtain a \textbf{distance matrix} of distances between \textbf{29} demand locations and \textbf{20} possible charging locations in the \textbf{Mumbai} region as a case study
+    \end{bullet-list-minor}
+
+    \bigblock{
+        Parallelized Matrix Factorization
+    }{
+        [April - May 2021]
+    }{
+        Course project: High performance scientific computing \(|\) Prof. Shivasubramanian Gopalakrishnan
+    }
+	\begin{bullet-list-minor}
+        \item Implemented the \textbf{Modified Gram Schmidt} algorithm for QR factorization of square matrices in \textbf{C++}
+        \item Achieved upto \textbf{60\% speedup} by paralellizing the algorithm implementation and performing a \textbf{time study} to analyze the effect of matrix size and the number of parallel \textbf{threads} on the program's execution time
+        \item Used the \textbf{OpenMP} multiprocessing library and \textbf{Nvidia's CUDA} platform for \textbf{GPU} based parallelization
+    \end{bullet-list-minor}
+
+    \bigblock{
+        Image Compression
+    }{
+        [March - May 2021]
+    }{
+        Course project: Introduction to Machine Learning \(|\) Prof. Biplab Banerjee
+    }
+	\begin{bullet-list-minor}
+        \item Performed \textbf{Principal Component Analysis} of the RGB component matrices of a given image using \textbf{Singular Value Decomposition} to reduce the image size, by utilzing the \textbf{Scikit-learn} Python library
+        \item Obtained a \textbf{PSNR} value of \textbf{24} by using \textbf{150} components, with up to \textbf{62.5\%} theoretical reduction in size
+    \end{bullet-list-minor}
+
+    \bigblock{
+        Git Contribution CLI
+    }{
+        [September 2020]
+    }{
+        Personal hobby project
+    }
+	\begin{bullet-list-minor}
+        \item Developed a \textbf{command-line interface} to generate commit history based \textbf{heatmap} graphs similar to those on GitHub profiles, but calculated from local \textbf{git} repositories, using the \textbf{Go programming language}
+        \item Scanned for \textbf{.git} folders to detect repositories in all \textbf{sub-folders} of a given directory using \textbf{recursion}
+        \item Utilized the \textbf{go-git package} to find commits authored by a given \textbf{email} to generate the heatmap graph
+    \end{bullet-list-minor}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Positions of Responsibility}
+
+    \bigblock{
+        Web Convener \(|\) Undergraduate Academic Council \(|\) IIT Bombay
+    }{
+        [April 2020 - May 2021]
+    }{
+        Part of a 4 member team in UGAC catering to 4500+ students in the institute
+    }
+    \begin{bullet-list-minor}
+        \item Responsible for \textbf{upgrading and maintaining} the academic council's webpages and \textbf{building} new ones
+        \item Developed a responsive webapp, \textbf{Credit}, using \textbf{Django} and \textbf{Bootstrap}, for writing course reviews, and implemented various features such as \textbf{up-vote/down-vote} review, course liking, and admin \textbf{moderation}
+        \item Revamped the \textbf{Learnerspace} and \textbf{iSURP} portals which saw \textbf{280+} student enrollments in \textbf{90+} projects
+    \end{bullet-list-minor}
+
+    \bigblock{
+        Teaching Assistant \(|\) Department of Chemistry \(|\) IIT Bombay
+    }{
+        [Nov - Dec 2021]
+    }{
+        Prof. R.B. Sunoj and Prof. Maheswaran Shanmugam
+    }
+    \begin{bullet-list-minor}
+        \item Assisted the course instructors in conducting the \textbf{online} mid-semester examination for
+        \textbf{1350+} students
+    \end{bullet-list-minor}
+    
+    % -----------------------------------------------------------------------------------------
+
+    \section{Technical Skills}
+
+    \begin{bullet-list-major}
+        \item \textbf{Programming Languages}: C++, Python, Javascript (and TypeScript), Bash, Java, PHP, AMPL, Go
+        \item \textbf{Tools \& Frameworks}: Django, Tornado, PyTorch, SkLearn, CUDA, LaTeX, Git, PostgreSQL, Bootstrap
+        \item \textbf{Software Experience}: Linux shell, Visual Studio Code, Vim, GitHub, Microsoft Office, Jupyter Notebook
+    \end{bullet-list-major}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Courses Completed}
+
+    \begin{bullet-list-major}
+        \item \textbf{Computer Science}: Computer Networks, Operating Systems, Implementation Techniques for
+        Relational Database Systems, Introduction to Machine Learning, Logic for CS, Computer
+        Programming and Utilization
+        \item \textbf{Mathematics and other courses}: Introduction to Numerical analysis, Linear Algebra, Calculus, Industrial Engineering and Operations Research, High Performance Scientific Computing, Economics
+    \end{bullet-list-major}
+
+    % -----------------------------------------------------------------------------------------
+
+    \section{Extracurricular Activities}
+
+    \begin{bullet-list-major}
+        \item Addressed \textbf{100+} students in a session on contributing to \textbf{Open Source} Software arranged by the \textbf{WnCC}
+        \item \textbf{Mentored 6} third year students for their internship preparation for software roles as a D-CAMP \textbf{mentor}
+        \item Secured \textbf{2nd position} in Shell Energy Day brainstorming competition among \textbf{10+} participating teams
+        \item Achieved a \textbf{perfect score} in the \textbf{SciComp General Championship} conducted by Maths and Physics club
+        \item Completed \textbf{year-long} course to learn to play the \textbf{tabla} instrument as a part of NSO in the freshman year
+    \end{bullet-list-major}
+
+    % -----------------------------------------------------------------------------------------
+
+    \vspace*{-7.71mm}
+
+\end{document}

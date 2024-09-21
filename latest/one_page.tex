@@ -1,14 +1,14 @@
 \documentclass[10pt]{article}
 \usepackage[parfill]{parskip}
-\usepackage{amsmath} 
-\usepackage[tmargin=20mm, lmargin=14.11mm, rmargin=14.11mm, bmargin=10mm]{geometry}
+\usepackage{amsmath}
+\usepackage[tmargin=5mm, lmargin=14.11mm, rmargin=14.11mm, bmargin=10mm]{geometry}
 \usepackage{hyperref}
 \usepackage{xcolor}
 
 \renewcommand{\section}[1]{
     \vspace*{5pt}
     \textsc{\Large{#1}}
-    \vspace*{-8pt} \\ \hspace*{-5pt} 
+    \vspace*{-8pt} \\ \hspace*{-5pt}
     \hrulefill \\
     \vspace*{-15pt}
     \vspace*{-5pt}
@@ -35,6 +35,33 @@
         \hspace*{-7pt} {\large{\textbf{#1}}} \hfill #2 \newline
         \textit{\textsf{#3}}
     }
+}
+
+\newcommand{\company}[2]{
+    {
+        \vspace*{3pt}
+        \hspace*{-7pt} {\large{\textbf{#1}}} \newline
+        \textit{\textsf{#2}} \newline
+    }
+}
+
+\newcommand{\position}[2]{
+    {
+        \vspace*{3pt}
+        \hspace*{3pt} {\normalsize{\textbf{#1}}} \hfill #2
+        \newline
+        \vspace{-15pt}
+    }
+}
+
+\newenvironment{bullet-list-position}{
+    \begin{list}{
+        \smallbullet
+    }{
+        \setlength\leftmargin{20pt}\topsep -6pt \itemsep -5pt
+    }
+} {
+    \end{list}
 }
 
 \newenvironment{bullet-list-minor}{
@@ -66,8 +93,10 @@
 
     % -----------------------------------------------------------------------------------------
 
-    {\LARGE{\begin{center}Abhijeet Bodas\end{center}}}
-    {\begin{center}Software Development Engineer / Data Analyst\end{center}}
+    {\Large{\begin{center}Abhijeet Prasad Bodas\end{center}}}
+    \vspace{-6pt}
+    {\begin{center}Software Development Engineer / Data Analyst, IIT Bombay graduate\end{center}}
+    \vspace{-6pt}
     {\begin{center}
         {\color{blue}\href{mailto:abhijeetbodas2001@gmail.com}{abhijeetbodas2001@gmail.com}} \(|\) {\color{blue}\href{https://www.linkedin.com/in/abhijeetbodas2001/}{LinkedIn}} \(|\) {\color{blue}\href{https://github.com/abhijeetbodas2001/}{GitHub}}
     \end{center}}
@@ -75,9 +104,16 @@
     % \vspace{-22pt}
     % \vspace{-5pt}
 
-    \section{Academic Achievements}
+    \section{Academics}
+    \hspace{-2pt}\textbf{Indian Institute of Technology, Bombay} \hfill [2019 - 2023] \hspace{-40pt}
+    \vspace{10pt}
     \begin{bullet-list-major}
-        \item Completed a \textbf{minor} degree from the department of \textbf{Computer Science and Engineering} at IIT Bombay \hfill [2022]
+        \item Major in Mechanical Engineering (ME) \hfill Grade: 8.67
+        \item Minor in Computer Science and Engineering (CSE) \hfill Grade: 8.00
+    \end{bullet-list-major}
+    \textbf{Other academic achievements}
+    \vspace{-10pt}
+    \begin{bullet-list-major}
         \item Secured an All India Rank of \textbf{628} (\textbf{99.74\%} percentile) in the \textbf{JEE Advanced} among \textbf{2.45 lakh} candidates \hfill [2019]
         \item Among top \textbf{1\%} of students to receive the \textbf{KVPY} Fellowship from \textbf{1 lakh} participants, with All India Rank \textbf{717}  \hfill [2018]
         \item Among \textbf{top 2 students} in Mumbai region in the Maharashtra \textbf{HSC} class 12th board exams in science stream   \hfill [2019]
@@ -87,36 +123,50 @@
 
     \section{Work Experience}
 
-    \bigblock{
-        Summer Analyst \(|\) Goldman Sachs, Bengaluru
+    \company{
+        Goldman Sachs Services Private Limited, Bengaluru
     }{
-        [May - July 2022]
-    }{
-        Production Runtime Experience, Core Engineering Division \(|\) Received \textbf{Pre-Placement Offer} for exemplary performance
+        Production Runtime Experience, Core Engineering Division
     }
-    \begin{bullet-list-minor}
-        \item Enhanced \textbf{runtime} predictions for processes in a \textbf{dependency graph} using \textbf{real time} data to improve \textbf{ETA} predictions
+    \position{Engineering Analyst, Machine Learning Team}{[July 2023 - Present]}
+    \begin{bullet-list-position}
+        \item Improved \textbf{monitoring} of realtime ML models by building probers and setting up latency tracking on \textbf{Prometheus}
+        \item \textbf{Migrated} a timeseries forecasting library from Python 2 to \textbf{Python 3}, and published it to firm's internal \textbf{PyPI}
+        \item As part of technical paper reading group, lead a discussion on Amazon's \textbf{MemoryDB} paper to an audience of 15+
+        \item Built weekly and monthly jobs for automated tracking of product metrics, to help with business review and charge-back
+    \end{bullet-list-position}
+    \position{Summer Intern}{[May - July 2022]}
+    \vspace{3pt}
+    \begin{bullet-list-position}
+        \item Enhanced \textbf{runtime} predictions for processes in a \textbf{dependency graph} using \textbf{real time} data to improve \textbf{ETA} accuracy
         \item Achieved upto \textbf{12\%} reduction in mean absolute \textbf{errors} after
         training multiple ML models like \textbf{XGBoost} and \textbf{SVM}
         \item Developed \textbf{Gremlin} queries to fetch data from the \textbf{Janus graph} database about common resources used by processes
         \item Implemented a \textbf{Graph Neural Network} based on \textbf{message passing} using the \textbf{PyTorch Geometric} (PyG) library in \textbf{Python} to enable the model to learn the structure of the graph, and trained the model by \textbf{masking} the child nodes
-    \end{bullet-list-minor}
+        \item Received a \textbf{Pre-Placement Offer} from the firm for exemplary performance and strong work ethic during the internship
+    \end{bullet-list-position}
 
     % -----------------------------------------------------------------------------------------
 
-    \bigblock{
-        Student Developer \(|\) Google Summer of Code {\color{blue} \href{https://gist.github.com/abhijeetbodas2001/bf3af6b8061c792559b97145246ed2e4}{[Work Report]}}
+    \vspace{5pt}
+    \company{
+        The Zulip Open Source Project
     }{
-        [May - August 2021]
-    }{
-        The Zulip project: powerful, open-source group chat application with first-class threading
+        Open source threaded team chat app, used by thousands of organizations to make remote work productive and delightful.
     }
-    \begin{bullet-list-minor}
-        \item Developed the highly requested \textbf{mute users} feature, which was one of the \textbf{release highlights} in the Zulip 4.0 changelog
+    \position{Mentor, Google Summer of Code}{[Mar - July 2023]}
+    \begin{bullet-list-position}
+        \item Mentored a student over a productive \textbf{3 month} coding period, ending with him receiving \textbf{full-time} job offer at Zulip
+        \item Participated in \textbf{project planning} and extensive \textbf{code review}, inculcating clean code patterns and good Git practices
+    \end{bullet-list-position}
+    \position{Student Developer, Google Summer of Code}{[May - Aug 2021]}
+    \vspace{3pt}
+    \begin{bullet-list-position}
+        \item Developed the highly requested \textbf{mute users} feature which was one of the \textbf{release highlights} in the Zulip 4.0 changelog
         \item Fixed several bugs due to \textbf{race conditions} by using \textbf{row-level locks} and \textbf{transactions} in the \textbf{PostgreSQL} database
         \item Developed a new \textbf{lossless} event \textbf{queue processor} for email notifications by making use of persistent database storage
         \item Consolidated all the notifiability logic in a new Python \textbf{dataclass}, thus improving codebase quality, while ensuring \textbf{backwards compatibility} of the \textbf{API} and the Tornado \textbf{event queue} system to avoid issues during \textbf{server upgrade}
-    \end{bullet-list-minor}
+    \end{bullet-list-position}
 
     % -----------------------------------------------------------------------------------------
 
@@ -182,9 +232,7 @@
     \begin{bullet-list-major}
         \item Worked as \textbf{Teaching Assistant} for courses ME316 and CH105, conducting \textbf{tutorials} and helping students with doubts
         \item Addressed \textbf{100+} students in a session on contributing to \textbf{Open Source} Software arranged by the Web \& Coding Club
-        \item \textbf{Mentored 6} students, and \textbf{addressed 30+} students, assisting them in their internship preparation as part of D-CAMP
         \item Secured \textbf{2nd position} in stage two of the Shell Energy Day brainstorming competition among \textbf{10+} participant teams
-        \item Achieved a \textbf{perfect score} in the \textbf{SciComp General Championship} conducted by the Maths and Physics club, IITB
     \end{bullet-list-major}
 
     % -----------------------------------------------------------------------------------------
